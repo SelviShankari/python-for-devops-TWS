@@ -14,10 +14,13 @@ query=f"query?function={function}&symbol={symbol}&apikey={API_KEY}" #seperating 
 
 # print(api_url+query) --> Prints the api after concatenating it with the query
 
-response=requests.get(api_url+query)
-# print(response.json())
+def get_stock_market ():
+    response=requests.get(api_url+query)
+    for key,value in response.json().items():
+        if key == "Time Series (Daily)":
+            continue
+        else :
+            print(response.json())
 
-for key,value in response.json().items():
-    for i in value:
-        if i > 200.00:
-            print(key,value)
+get_stock_market()
+
