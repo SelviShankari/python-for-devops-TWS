@@ -1,0 +1,3 @@
+INFO count: 10
+WARNING count: 2
+ERROR count: 3
